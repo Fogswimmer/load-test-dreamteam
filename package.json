@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --format=esm --external:k6 --external:k6/* --outfile=dist/main.js",
+    "test": "pnpm run build && docker compose run --rm k6"
+  },
+  "devDependencies": {
+    "@types/k6": "^1.0.0",
+    "esbuild": "^0.25.0"
+  }
+}
